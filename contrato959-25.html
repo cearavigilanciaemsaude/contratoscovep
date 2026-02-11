@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>COVEP</title>
+
+    <!-- ARQUIVO CSS EXTERNO -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <h1>Contrato 959/2025 - ÁGUA MINERAL</h1>
+
+    <div class="navegacao">
+        <a href="contratos.html" class="btn-voltar"><i class="fa-solid fa-rotate-left"></i> Contratos </a>
+    </div>
+
+    <!-- DADOS PRINCIPAIS DO CONTRATO -->
+    <div class="bloco-principal">
+        <div class="linha-info">
+            <strong>Nº do Contrato:</strong> 959/2025 - ÁGUA MINERAL
+        </div>
+        <div class="linha-info">
+            <strong>SACC:</strong> 1387300
+        </div>
+        <div class="linha-info">
+            <strong>Contratado:</strong> CAMILA FRAGOSO AGUIAR DOS ANJOS
+        </div>
+        <div class="linha-info">
+            <strong>CNPJ:</strong> 27.761.457/0001-75
+        </div>
+        <div class="linha-info">
+            <strong>Objeto do Contrato:</strong> AQUISIÇÃO DE MATERIAL DE CONSUMO (ÁGUA MINERAL)
+        </div>
+        <div class="status-contrato" id="statusContrato">
+    Calculando status do contrato...
+</div>
+    </div>
+
+    <!-- DADOS COMPLEMENTARES -->
+    <table>
+        <thead>
+            <tr>
+                <th>GESTOR</th>
+                <th>FISCAL</th>
+                <th>DATA INICIO</th>
+                <th>DATA DE TERMINO</th>
+                <th>PERIODO</th>
+                <th>VALOR</th>
+                <th>ADITIVO</th>
+                <th>APOSTILAMENTO</th>              
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SÉRGIO EDUARDO MACHADO JUCÁ DE QUEIROZ</td>
+                <td>ANA MARIA PEIXOTO CABRAL MAIA</td>
+                <td>01/09/2025</td>
+                <td>01/09/2026</td>
+                <td>12 MESES</td>
+                <td>R$ 15.900,00</td>
+                <td>NÃO</td>
+                <td><a href="Apost959-25.html"> SIM</a></td>                              
+                
+            </tr>
+
+            
+        </tbody>
+    </table>
+    
+    <!--<h2>Programação 2026</h2>
+    <p> <strong> Empenho de R$ 176.400,00:</strong> 03 parcelas de 500 cestas (demandas de fevereiro a abril).<br><br>
+        <strong> Empenho de R$ 176.400,00:</strong> 03 parcelas de 500 cestas (demandas de maio a julho).<br><br> -->
+
+    <script>
+    // Função para converter data no formato BR (dd/mm/aaaa) para Date
+    function converterDataBR(dataTexto) {
+        const partes = dataTexto.split("/");
+        return new Date(partes[2], partes[1] - 1, partes[0]);
+    }
+
+    // Captura os títulos da tabela
+    const ths = document.querySelectorAll("th");
+    let indiceInicio, indiceTermino, indicePeriodo;
+
+    ths.forEach((th, index) => {
+        const titulo = th.innerText.trim().toUpperCase();
+
+        if (titulo === "DATA INICIO") indiceInicio = index;
+        if (titulo === "DATA DE TERMINO") indiceTermino = index;
+        if (titulo === "PERIODO") indicePeriodo = index;
+    });
+
+    // Captura a primeira linha de dados
+    const linha = document.querySelector("tbody tr");
+    const colunas = linha.querySelectorAll("td");
+
+    const dataInicioTexto = colunas[indiceInicio].innerText.trim();
+    const dataTerminoTexto = colunas[indiceTermino].innerText.trim();
+
+    const dataInicio = converterDataBR(dataInicioTexto);
+    const dataTermino = converterDataBR(dataTerminoTexto);
+
+    const hoje = new Date();
+
+    // Zera horas para evitar erro de cálculo
+    hoje.setHours(0, 0, 0, 0);
+    dataTermino.setHours(0, 0, 0, 0);
+
+    const diferencaMs = dataTermino - hoje;
+    const diasRestantes = Math.ceil(diferencaMs / (1000 * 60 * 60 * 24));
+
+    const statusDiv = document.getElementById("statusContrato");
+
+    if (diasRestantes > 0) {
+        statusDiv.innerText = `⏳ Faltam ${diasRestantes} dias para o vencimento do contrato.`;
+        statusDiv.classList.add("ativo");
+    } else if (diasRestantes === 0) {
+        statusDiv.innerText = "⚠️ O contrato vence hoje.";
+        statusDiv.classList.add("alerta");
+    } else {
+        statusDiv.innerText = "❌ Contrato vencido.";
+        statusDiv.classList.add("vencido");
+    }
+</script>
+
+</body>
+</html>

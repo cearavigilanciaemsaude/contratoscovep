@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    padding: 20px;
+}
+
+.status-contrato {
+    margin: 20px 0;
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.status-contrato.ativo {
+    background-color: #e8f0ff;
+    color: #0B5D4B;
+}
+
+.status-contrato.vencido {
+    background-color: #ffeaea;
+    color: #c40000;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* BLOCO PRINCIPAL */
+.bloco-principal {
+    background-color: #ffffff;
+    padding: 15px;
+    border-left: 5px solid #F7941D;
+    margin-bottom: 20px;
+}
+
+.linha-info {
+    margin-bottom: 8px;
+}
+
+.linha-info strong {
+    display: inline-block;
+    width: 180px;
+}
+
+/* =========================
+   TABLE - ESTILO SISTEMA
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    font-size: 14px;
+}
+
+/* CABEÇALHO */
+table thead th {
+    padding: 10px 12px;
+    text-align: left;
+    color: #0B5D4B;
+    font-weight: 600;
+    background-color: #F4F7F6;
+    border-bottom: 2px solid #F7941D;
+    white-space: nowrap;
+}
+
+/* CORPO */
+table tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #E0E0E0;
+    vertical-align: middle;
+}
+
+/* LINHAS */
+table tbody tr:nth-child(even) {
+    background-color: #FAFAFA;
+}
+
+table tbody tr:hover {
+    background-color: #FFF9F0;
+}
+
+/* TEXTO LONGO (NOMES, OBJETOS) */
+table td {
+    line-height: 1.4;
+}
+
+/* LINKS */
+table a {
+    color: #0F7B5B;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+table a:hover {
+    color: #F7941D;
+}
+
+/* SIM / NÃO / STATUS */
+table td:contains("SIM") {
+    color: #0F7B5B;
+    font-weight: 600;
+}
+
+table td:contains("NÃO") {
+    color: #6B6B6B;
+    font-weight: 600;
+}
+.navegacao {
+    display: flex;          /* Ativa o modo flexbox */
+    justify-content: flex-end; /* Alinha o conteúdo ao final (direita) */
+    padding: 10px 0;        /* Adiciona um espaço em cima e embaixo */
+}
+
+.btn-voltar {
+    text-decoration: none;  /* Remove o sublinhado padrão */
+    color: #007BFF;         /* Cor azul padrão de links */
+    font-weight: bold;
+}

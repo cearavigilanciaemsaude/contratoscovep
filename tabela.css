@@ -1,0 +1,64 @@
+/* =========================
+   TABLE - ESTILO SISTEMA
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    font-size: 14px;
+}
+
+/* CABEÇALHO */
+table thead th {
+    padding: 10px 12px;
+    text-align: left;
+    color: #0B5D4B;
+    font-weight: 600;
+    background-color: #F4F7F6;
+    border-bottom: 2px solid #F7941D;
+    white-space: nowrap;
+}
+
+/* CORPO */
+table tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #E0E0E0;
+    vertical-align: middle;
+}
+
+/* LINHAS */
+table tbody tr:nth-child(even) {
+    background-color: #FAFAFA;
+}
+
+table tbody tr:hover {
+    background-color: #FFF9F0;
+}
+
+/* TEXTO LONGO (NOMES, OBJETOS) */
+table td {
+    line-height: 1.4;
+}
+
+/* LINKS */
+table a {
+    color: #0F7B5B;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+table a:hover {
+    color: #F7941D;
+}
+
+/* SIM / NÃO / STATUS */
+table td:contains("SIM") {
+    color: #0F7B5B;
+    font-weight: 600;
+}
+
+table td:contains("NÃO") {
+    color: #6B6B6B;
+    font-weight: 600;
+}

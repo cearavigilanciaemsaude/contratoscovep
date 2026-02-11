@@ -1,0 +1,137 @@
+/* =========================
+   RESET
+========================= */
+:root {
+    --verde-escuro: #0B5D4B;
+    --verde-principal: #0F7B5B;
+    --laranja-destaque: #F7941D;
+    --cinza-borda: #DADADA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F2F2F2;
+    color: #1F1F1F;
+}
+
+/* =========================
+   HEADER (ESTILO SISTEMA)
+========================= */
+.header {
+    padding: 24px 20px;
+    background-color: #FFFFFF;
+    border-bottom: 3px solid var(--laranja-destaque);
+    text-align: left;
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: 500;
+    color: #0B5D4B;
+    margin-bottom: 4px;
+}
+
+.header p {
+    font-size: 14px;
+    color: #6B6B6B;
+}
+
+/* =========================
+   GRID
+========================= */
+.grid {
+    max-width: 1200px;
+    margin: 24px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    padding: 0 20px;
+}
+
+/* =========================
+   ITEM (CARD SISTEMA)
+========================= */
+.item {
+    background-color: #FFFFFF;
+    padding: 20px;
+    text-align: left;
+    text-decoration: none;
+    color: #1F1F1F;
+
+    border: 1px solid var(--cinza-borda);
+    border-left: 4px solid var(--verde-principal);
+    border-radius: 4px;
+
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+
+.item i {
+    font-size: 26px;
+    color: var(--verde-principal);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.item:hover i {
+    color: var(--laranja-destaque);
+}
+
+.item span {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* =========================
+   TABELAS - PADRÃO SISTEMA
+========================= */
+
+.table-container {
+    margin: 24px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #DADADA;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+
+/* =========================
+   HOVER (DISCRETO)
+========================= */
+.item:hover {
+    border-left-color: var(--laranja-destaque);
+    background-color: #FFF9F0;
+}
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 13px;
+    color: #6B6B6B;
+}
+.navegacao {
+    display: flex;          /* Ativa o modo flexbox */
+    justify-content: right; /* Alinha o conteúdo ao final (direita) */
+    padding: 10px 0;        /* Adiciona um espaço em cima e embaixo */
+}
+
+.btn-voltar {
+    display: block;      /* Garante que ele ocupe uma linha própria */
+    text-align: right;   /* Alinha o texto do link à direita */
+    margin-top: 15px;    /* Espaço abaixo da linha laranja */
+    margin-right: 30px;  /* Espaço em relação à borda direita */
+    text-decoration: none;
+    color: blue;
+}
